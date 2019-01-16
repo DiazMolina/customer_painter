@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp( MyApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -55,17 +55,29 @@ class CustomSlider extends StatelessWidget {
         children: <Widget>[
           Stack(
             children: <Widget>[
-              Transform(
-                transform: Matrix4.skewX(-0.7),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(0),
-                        bottomLeft: Radius.circular(360)),
-                    color: Colors.pink,
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(90),
+                      bottomLeft: Radius.circular(90)),
+                  gradient: LinearGradient(
+                    colors: [Colors.pink, Colors.white],
+                    begin: const FractionalOffset(0.0, 0.0),
+                    end: const FractionalOffset(0.5, 0.5),
+                    stops: [15, 9.0],
                   ),
-                  width: 70,
-                  height: 30,
+                ),
+                padding: EdgeInsets.only(left: 25),
+                width: 70,
+                child: Transform(
+                  transform: Matrix4.skewX(-0.7),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.pink,
+                    ),
+                    width: 70,
+                    height: 30,
+                  ),
                 ),
               ),
               Padding(
@@ -94,17 +106,29 @@ class CustomSlider extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 228.0),
-                child: Transform(
-                  transform: Matrix4.skewX(-0.7)..absolute(),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(300),
-                          bottomRight: Radius.circular(10)),
-                      color: Colors.pink[100],
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(90),
+                        bottomRight: Radius.circular(90)),
+                    gradient: LinearGradient(
+                      colors: [Colors.white, Colors.pink[100]],
+                      begin: FractionalOffset(0.0, 0.0),
+                      end: FractionalOffset(0.5, 0.5),
+                      stops: [15, 9.0],
                     ),
-                    width: 70,
-                    height: 30,
+                  ),
+                  padding: EdgeInsets.only(right: 15),
+                  width: 60,
+                  child: Transform(
+                    transform: Matrix4.skewX(-0.7)..absolute(),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.pink[100],
+                      ),
+                      width: 70,
+                      height: 30,
+                    ),
                   ),
                 ),
               ),
